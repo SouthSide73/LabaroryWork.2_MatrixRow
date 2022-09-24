@@ -3,7 +3,7 @@ from numpy import linalg
 
 try:
     m = int(input('Введите размерность квадратной матрицы:'))
-    a = np.random.randint(15, size=(m, m))
+    a = np.random.randint(5, size=(m, m))
     r = np.linalg.matrix_rank(a)
     print("Матрица:\n", a)
     print("Ранг матрицы:", r)
@@ -28,4 +28,6 @@ try:
         print(n-1, ':', summa, ' ', out)
     print('Сумма знакопеременного ряда:', summa)
 except OverflowError:
+    print("\nПрограмма не может произвести дальнейшие вычисления")
+except RuntimeWarning:
     print("\nПрограмма не может произвести дальнейшие вычисления")
