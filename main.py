@@ -14,16 +14,17 @@ try:
     second = 1
     fact = 1
     summa = 0
-    fg = 1
+    fg = 0
     out = 1
     while abs(out) > t:
         out = 0
         fact = fact*(2*n - 1)*first*second
         fg += summa
         summa += (np.linalg.det(linalg.matrix_power(a, 2*n-1))) / fact
-        out = abs(fg/summa)
+        out = abs(fg-summa)
         n += 1
         second = second * 2
+        fg = 0
         print(n-1, ':', summa, ' ', out)
     print('Сумма знакопеременного ряда:', summa)
 except OverflowError:
