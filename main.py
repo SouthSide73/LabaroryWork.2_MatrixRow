@@ -12,19 +12,16 @@ print("Ранг матрицы:", r)
 t = int(input('Введите количество знаков после запятой в результате вычисления:'))
 t = 0.1 ** t
 n = 1
-second = 1
 fact = 1
 summa = 0
 fg = 0
 out = 1
 while abs(out) > t:
-    out = 0
     fg += summa
     summa += (np.linalg.det(linalg.matrix_power(a, 2 * n - 1))) / fact
-    fact = fact * (2*n - 1) * second
-    out = abs(fg-summa)
     n += 1
-    second = 2*n - 2
+    fact = fact * (2*n - 1) * (2*n - 2)
+    out = abs(fg-summa)
     fg = 0
     print(n-1, ':', summa, ' ', out)
 print('Сумма знакопеременного ряда:', summa)
